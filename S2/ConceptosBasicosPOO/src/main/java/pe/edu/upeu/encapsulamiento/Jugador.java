@@ -14,4 +14,14 @@ public class Jugador {
     private int edad;
     private String pocision;
     private int numeroCamiseta;
+
+    public String toString(){
+        return "El jugador tiene estas caracteristicas:" +
+                "\n\t nombre:" +nombre+
+                "\n\t apellido:" +apellido+
+                "\n\t edad:" +edad+
+                "\n\t pocisiòn:" +pocision+
+                "\n\t numero de camiseta:" +numeroCamiseta
+                ;
+    }
 }
