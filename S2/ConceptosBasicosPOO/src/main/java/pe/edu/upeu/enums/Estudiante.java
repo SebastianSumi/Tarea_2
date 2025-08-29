@@ -25,5 +25,8 @@ public class Estudiante {
                 "Mamani",GENERO.Masculino,CARRERA.Sistemas);
         System.out.println(estudiante.codigo+" "+estudiante.nombre+" "
                 +estudiante.apellido+" "+estudiante.genero+" "+estudiante.carrera);
+        for  (CARRERA c: CARRERA.values()){
+            System.out.println(c);
+        }
     }
 }
