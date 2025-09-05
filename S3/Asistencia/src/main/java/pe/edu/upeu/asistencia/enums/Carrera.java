@@ -18,9 +18,7 @@ public enum Carrera {
     Carrera(Facultad facultad) {
         this.facultad = facultad;
     }
-
     public Facultad getFacultad() {
         return facultad;
     }
-
 }

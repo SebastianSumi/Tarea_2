@@ -2,13 +2,12 @@ package pe.edu.upeu.asistencia.servicio;
 
 import pe.edu.upeu.asistencia.modelo.Participante;
 import pe.edu.upeu.asistencia.repositorio.ParticipanteRepository;
-
 import java.util.List;
 
-public class ParticipanteServicioImp extends ParticipanteRepository implements ParticipanteServicioI {
+public class ParticipanteServicioImp extends ParticipanteRepository
+        implements ParticipanteServicioI {
     @Override
     public void save(Participante participante) {
-
         participantes.add(participante);
     }
     @Override
@@ -17,12 +16,10 @@ public class ParticipanteServicioImp extends ParticipanteRepository implements P
     }
     @Override
     public void delete(int index) {
-
         participantes.remove(index);
     }
     @Override
     public Participante findById(int index) {
-
         return participantes.get(index);
     }
 
