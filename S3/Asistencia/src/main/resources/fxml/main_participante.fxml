@@ -16,7 +16,10 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="295.0" layoutY="64.0" text="Buscar Participante" />
+                  <Label layoutX="295.0" layoutY="60.0" text="Buscar Participante">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font></Label>
                   <TextField layoutX="295.0" layoutY="81.0" />
                </children></AnchorPane>
             <AnchorPane>
@@ -51,9 +54,9 @@
                               <Label text="Apellidos" GridPane.rowIndex="3" />
                               <Label text="Carrera:" GridPane.rowIndex="4" />
                               <Label text="Tipo Participante:" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtdni" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtnombres" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtapellidos" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
                               <ComboBox fx:id="cbxCarrera" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                               <ComboBox fx:id="cbxTipoParticipante" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                               <Button mnemonicParsing="false" text="Buscar" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -61,12 +64,12 @@
                                     <Insets left="5.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registrarParticipante" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets right="5.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#limpiarFormulario" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets left="5.0" />
                                  </GridPane.margin>
