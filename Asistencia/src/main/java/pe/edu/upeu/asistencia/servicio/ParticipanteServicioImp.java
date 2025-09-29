@@ -13,12 +13,12 @@ public class ParticipanteServicioImp extends ParticipanteRepository
         super.save(participante);
     }
     @Override
-    public Participante update(Participante participante, int index) {
-        return participantes.set(index, participante);
+    public Participante update(Participante participante) {
+        return super.update(participante);
     }
     @Override
-    public void delete(int index) {
-        participantes.remove(index);
+    public void delete(String dni) {
+        super.delete(dni);
     }
     @Override
     public Participante findById(int index) {
