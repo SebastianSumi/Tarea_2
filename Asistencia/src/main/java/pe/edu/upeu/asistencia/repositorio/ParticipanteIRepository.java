@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.asistencia.modelo.Participante;
 
 @Repository
-public interface ParticipanteIRepository  extends JpaRepository<Participante,String> {
+public interface ParticipanteIRepository extends JpaRepository<Participante,String> {
 }

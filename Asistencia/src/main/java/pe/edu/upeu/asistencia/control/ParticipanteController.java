@@ -1,5 +1,6 @@
 package pe.edu.upeu.asistencia.control;
 
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -82,7 +83,7 @@ public class ParticipanteController {
     }
     public void listarPartipantes(){
         dniCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDni()));
-        nombreCol.setCellValueFactory(cellData -> new  SimpleStringProperty(cellData.getValue().getNombre()));
+        nombreCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         apellidoCol.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getApellidos()));
         carreraCol.setCellValueFactory(
                 cellData->new SimpleStringProperty(cellData.getValue().getCarrera().toString())

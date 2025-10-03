@@ -10,26 +10,25 @@ import java.util.List;
 @Service
 public class ParticipanteServicioImp implements ParticipanteServicioI {
     @Autowired
-    ParticipanteIRepository participanteIRepository;
+    ParticipanteIRepository participanteRepository;
     @Override
     public void save(Participante participante) {
-        participanteIRepository.save(participante);
+        participanteRepository.save(participante);
     }
     @Override
     public Participante update(Participante participante) {
-        return participanteIRepository.save(participante);
+        return participanteRepository.save(participante);
     }
     @Override
     public void delete(String dni) {
-        participanteIRepository.deleteById(dni);
+        participanteRepository.deleteById(dni);
     }
     @Override
     public Participante findById(String dni) {
-        return participanteIRepository.findById(dni).orElse(null);
+        return participanteRepository.findById(dni).orElse(null);
     }
-
     @Override
     public List<Participante> findAll(){
-        return participanteIRepository.findAll();
+        return participanteRepository.findAll();
     }
 }

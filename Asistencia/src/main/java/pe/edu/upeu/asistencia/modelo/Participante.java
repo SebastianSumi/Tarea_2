@@ -12,8 +12,8 @@ import pe.edu.upeu.asistencia.enums.TipoParticipante;
 //@Data
 @Setter
 @Getter
-@Entity
-@Table (name="participante")
+@Entity()
+@Table(name = "participante")
 public class Participante {
     @Id
     private String dni;
@@ -22,6 +22,7 @@ public class Participante {
     private String apellidos;
     @Enumerated(EnumType.STRING)
     private Carrera carrera;
+    @Enumerated(EnumType.STRING)
     private TipoParticipante tipoParticipante;
     private Boolean estado;
 
