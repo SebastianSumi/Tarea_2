@@ -9,7 +9,8 @@ public interface ProductoIService {
     Producto save(Producto producto);
     List<Producto> findAll();
     Producto update(Producto producto);
-    void delete(Long id);
+    void delete(Producto producto);
+    void deleteById(Long id);
     Producto findById(Long id);
     List<ModeloDataAutocomplet> listAutoCompletProducto(String nombre);
     public List<ModeloDataAutocomplet> listAutoCompletProducto();

@@ -30,8 +30,12 @@ public class ProductoServiceImp implements ProductoIService {
         return pRepo.save(producto);
     }
     @Override
-    public void delete(Long id) {
+    public void deleteById(Long id) {
         pRepo.deleteById(id);
+    }
+    @Override
+    public void delete(Producto producto) {
+        pRepo.delete(producto);
     }
     @Override
     public Producto findById(Long id) {
