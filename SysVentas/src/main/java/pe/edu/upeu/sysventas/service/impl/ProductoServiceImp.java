@@ -30,12 +30,8 @@ public class ProductoServiceImp implements ProductoIService {
         return pRepo.save(producto);
     }
     @Override
-    public void deleteById(Long id) {
+    public void delete(Long id) {
         pRepo.deleteById(id);
-    }
-    @Override
-    public void delete(Producto producto) {
-        pRepo.delete(producto);
     }
     @Override
     public Producto findById(Long id) {
@@ -61,6 +57,8 @@ public class ProductoServiceImp implements ProductoIService {
         }
         return listarProducto;
     }
+
+
     @Override
     public List<ModeloDataAutocomplet> listAutoCompletProducto() {
         List<ModeloDataAutocomplet> listarProducto = new ArrayList<>();

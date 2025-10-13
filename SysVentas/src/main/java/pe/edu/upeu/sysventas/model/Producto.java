@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "upeu_producto")
-public class   Producto {
+public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
     private Long idProducto;
     //@NotNull(message = "El nombre no puede estar vacío")
-    //@Size(min = 2, max = 120, message = "El nombre debe tener entre 2 y 120 caracteres")
+//@Size(min = 2, max = 120, message = "El nombre debe tener entre 2 y 120 caracteres")
     @Column(name = "nombre", nullable = false, length = 120)
     private String nombre;
     //@Positive(message = "El Precio Unitario debe ser positivo")

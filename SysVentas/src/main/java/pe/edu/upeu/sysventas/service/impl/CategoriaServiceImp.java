@@ -11,10 +11,11 @@ import pe.edu.upeu.sysventas.service.ICategoriaService;
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class CategoriaServiceImp extends CrudGenericSeviceImp<Categoria,Long> implements ICategoriaService {
+public class CategoriaServiceImp extends CrudGenericServiceImp<Categoria,Long>  implements ICategoriaService {
     private final CategoriaRepository categoriaRepository;
     @Override
-    protected ICrudGenericRepository getRepo() {
+    protected ICrudGenericRepository<Categoria, Long> getRepo() {
         return categoriaRepository;
     }
+
 }

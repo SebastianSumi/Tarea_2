@@ -12,7 +12,7 @@ public class ComboBoxOption {
     String value;
 
     @Override
-    public String toString() {
+    public String toString(){
         return value;
     }
 }

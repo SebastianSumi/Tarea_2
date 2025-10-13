@@ -13,6 +13,7 @@ import pe.edu.upeu.sysventas.enums.TipoDocumento;
 @Data
 @Entity
 @Table(name = "upeu_cliente")
+
 public class Cliente {
     @Id
     @Column(name = "dniruc", nullable = false, length = 12)
