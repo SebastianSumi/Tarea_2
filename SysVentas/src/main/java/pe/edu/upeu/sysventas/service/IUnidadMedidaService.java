@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface IUnidadMedidaService extends  ICrudGenericService<UnidadMedida,Long> {
     List<ComboBoxOption> listarCombobox();
-
 }

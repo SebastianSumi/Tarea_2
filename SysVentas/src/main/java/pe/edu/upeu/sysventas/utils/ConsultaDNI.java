@@ -5,10 +5,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 import pe.edu.upeu.sysventas.dto.PersonaDto;
 
 import java.io.IOException;
 
+@Component
 public  class ConsultaDNI {
 
     public PersonaDto consultarDNI(String dni){
@@ -52,7 +54,7 @@ public  class ConsultaDNI {
 
     public static void main(String[] args) {
         ConsultaDNI p=new ConsultaDNI();
-      PersonaDto a=  p.consultarDNI("42360472");
+        PersonaDto a=  p.consultarDNI("73454203");
         System.out.println(a.toString());
     }
 

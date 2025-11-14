@@ -16,21 +16,23 @@ import javax.sql.DataSource;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 
 @RequiredArgsConstructor
 @Service
 public class VentaServiceImp extends CrudGenericServiceImp<Venta, Long> implements IVentaService {
-
-    private final VentaRepository ventaRepository;
     @Autowired
     private DataSource dataSource;
+
+    private final VentaRepository ventaRepository;
 
     @Override
     protected ICrudGenericRepository<Venta, Long> getRepo() {
         return ventaRepository;
     }
+
     @Override
     public File getFile(String filex) {
         File newFolder = new File("jasper");
@@ -41,6 +43,8 @@ public class VentaServiceImp extends CrudGenericServiceImp<Venta, Long> implemen
                 CAMINO.toAbsolutePath().toFile());
         return CAMINO.toFile();
     }
+
+
     @Override
     public JasperPrint runReport(Long idv) throws JRException, SQLException
     {
@@ -57,11 +61,36 @@ public class VentaServiceImp extends CrudGenericServiceImp<Venta, Long> implemen
         param.put("imagenurl", imgen);
         param.put("urljasper", urljasper);
         // Cargar el diseño del informe
-        JasperDesign jdesign =
-                JRXmlLoader.load(getFile("comprobante.jrxml"));
+        JasperDesign jdesign = JRXmlLoader.load(getFile("comprobante.jrxml"));
         JasperReport jreport = JasperCompileManager.compileReport(jdesign);
         // Llenar el informe
-        return JasperFillManager.fillReport(jreport, param,
-                dataSource.getConnection());
+
+        try (Connection conn = dataSource.getConnection()) {
+            return JasperFillManager.fillReport(jreport, param, conn);
+        }
+
+    }
+
+    @Override
+    public JasperPrint runReportVenta(String fechaI, String fechaF) throws JRException, SQLException
+    {
+
+        HashMap<String, Object> param = new HashMap<>();
+        // Obtener ruta de la imagen
+        String imgen = getFile("logoupeu.png").getAbsolutePath();
+        String urljasper=getFile("detallev.jasper").getAbsolutePath();
+        // Agregar parámetros
+        param.put("fechaI", fechaI);
+        param.put("imagenurl", imgen);
+        param.put("fechaF", fechaF);
+        // Cargar el diseño del informe
+        JasperDesign jdesign = JRXmlLoader.load(getFile("reporte_ventas.jrxml"));
+        JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        // Llenar el informe
+
+        try (Connection conn = dataSource.getConnection()) {
+            return JasperFillManager.fillReport(jreport, param, conn);
+        }
+
     }
 }

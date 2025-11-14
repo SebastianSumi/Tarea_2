@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "upeu_producto")
 public class Producto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
@@ -26,9 +25,11 @@ public class Producto {
     @Size(min = 2, max = 120, message = "El nombre debe tener entre 2 y 120 caracteres")
     @Column(name = "nombre", nullable = false, length = 120)
     private String nombre;
+
     @Positive(message = "El Precio Unitario debe ser positivo")
     @Column(name = "pu", nullable = false)
     private Double pu;
+
     @PositiveOrZero(message = "El Precio Unitario Anterior debe ser positivo o cero")
     @Column(name = "puold", nullable = false)
     private Double puOld;
@@ -55,8 +56,8 @@ public class Producto {
             "FK_MARCA_PRODUCTO"))
     private Marca marca;
     @NotNull(message = "Unidad Medida no puede estar vacío")
-    @ManyToOne@JoinColumn(name = "id_unidad", referencedColumnName =
-            "id_unidad",
+    @ManyToOne
+    @JoinColumn(name = "id_unidad", referencedColumnName = "id_unidad",
             nullable = false, foreignKey = @ForeignKey(name =
             "FK_UNIDADMEDIDA_PRODUCTO"))
     private UnidadMedida unidadMedida;

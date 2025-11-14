@@ -21,10 +21,12 @@ public class VentCarritoServiceImp extends CrudGenericServiceImp<VentCarrito, Lo
     protected ICrudGenericRepository<VentCarrito, Long> getRepo() {
         return carritoRepository;
     }
+
     @Override
     public List<VentCarrito> listaCarritoCliente(String dni) {
         return carritoRepository.listaCarritoCliente(dni);
     }
+
     @Transactional
     @Override
     public void deleteCarAll(String dniruc) {

@@ -17,7 +17,6 @@ import java.util.List;
 @Service
 public class CategoriaServiceImp extends CrudGenericServiceImp<Categoria,Long>  implements ICategoriaService {
     private final CategoriaRepository categoriaRepository;
-
     @Override
     protected ICrudGenericRepository<Categoria, Long> getRepo() {
         return categoriaRepository;
@@ -25,15 +24,14 @@ public class CategoriaServiceImp extends CrudGenericServiceImp<Categoria,Long>  
 
     @Override
     public List<ComboBoxOption> listarCombobox() {
-        List<ComboBoxOption> listar = new ArrayList<>();
+        List<ComboBoxOption> listar=new ArrayList<>();
         ComboBoxOption cb;
-        for (Categoria cate : categoriaRepository.findAll()) {
-            cb = new ComboBoxOption();
+        for(Categoria cate : categoriaRepository.findAll()) {
+            cb=new ComboBoxOption();
             cb.setKey(String.valueOf(cate.getIdCategoria()));
             cb.setValue(cate.getNombre());
             listar.add(cb);
         }
         return listar;
     }
-
 }

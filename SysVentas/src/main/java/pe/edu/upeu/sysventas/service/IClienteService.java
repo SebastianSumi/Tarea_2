@@ -5,7 +5,6 @@ import pe.edu.upeu.sysventas.model.Cliente;
 
 import java.util.List;
 
-public interface IClienteService extends ICrudGenericService<Cliente,
-        String>{
+public interface IClienteService extends ICrudGenericService<Cliente,String> {
     List<ModeloDataAutocomplet> listAutoCompletCliente();
 }

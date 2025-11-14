@@ -15,7 +15,6 @@ import java.util.List;
 @Service
 public class UnidadMedidaServiceImp extends CrudGenericServiceImp<UnidadMedida, Long> implements IUnidadMedidaService {
     private final UnidadMedidaRepository unidadMedidaRepository;
-
     @Override
     protected ICrudGenericRepository<UnidadMedida, Long> getRepo() {
         return unidadMedidaRepository;
@@ -23,10 +22,10 @@ public class UnidadMedidaServiceImp extends CrudGenericServiceImp<UnidadMedida, 
 
     @Override
     public List<ComboBoxOption> listarCombobox() {
-        List<ComboBoxOption> listar = new ArrayList<>();
+        List<ComboBoxOption> listar=new ArrayList<>();
         ComboBoxOption cb;
-        for (UnidadMedida cate : unidadMedidaRepository.findAll()) {
-            cb = new ComboBoxOption();
+        for(UnidadMedida cate : unidadMedidaRepository.findAll()) {
+            cb=new ComboBoxOption();
             cb.setKey(String.valueOf(cate.getIdUnidad()));
             cb.setValue(cate.getNombreMedida());
             listar.add(cb);
@@ -35,4 +34,3 @@ public class UnidadMedidaServiceImp extends CrudGenericServiceImp<UnidadMedida, 
     }
 
 }
-
